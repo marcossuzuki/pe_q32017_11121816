@@ -13,6 +13,10 @@ int main() {
 
     }
 
+    /*
+    soma = (n + 1) * n/2;
+    */
+
     printf("soma de 1 a %d = %d", n, soma);
 
     return 0;
