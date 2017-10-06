@@ -1,27 +1,26 @@
 #include <stdio.h>
 
-unsigned int digits (unsigned int n) {
+long int digits (long int n) {
     if (n<10) return 1;
     return digits(n/10)+1;
 }
 
-unsigned int digitsTR (unsigned int n, unsigned int base) {
+long int digitsTR (long int n, long int base) {
     if (n<10) return base;
     return digitsTR(n/10, base+1);
 }
 
 int main(){
 
-    unsigned int n; 
+    long int n; 
 
     printf("=== Numero de digitos ===\n");
     printf("Digite n: ");
-    scanf("%d", &n);
+    scanf("%ld", &n);
 
+    printf("Numero de digitos recusrisva caudal: %ld\n", digitsTR(n,1));    
 
-    printf("Numero de digitos recusrisva caudal: %d\n", digitsTR(n,1));    
-
-    printf("Numero de digitos recusrisva: %d\n", digits(n));  
+    printf("Numero de digitos recusrisva: %ld\n", digits(n));  
 
 
     return 0;

@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 unsigned int primo (unsigned int n, unsigned int divisor) {
-    if (divisor==1) return 1;
+    if (divisor<=1) return 1;
     else if (n==divisor) return primo(n, divisor - 1);
     else if (n%divisor==0) return 0;
     return primo(n, divisor - 1);
