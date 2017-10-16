@@ -45,16 +45,21 @@ float kelvin ( int unidade, float valor ) {
 float decimal ( int unidade, float valor ) {
 
     if ( unidade == 2 ) {
-        float decimal;
-        int cont = 1;
 
-        while ( valor!=0 ) {
+        int  inteiro, decimal = 0, i = 1;
 
+        inteiro = (int)valor;
 
+        while( inteiro>0 )
+        {
+
+            decimal += (inteiro % 10) * i;
+            i *= 2;
+            inteiro /= 10;
 
         }
 
-        return decima;
+        return decimal;
 
     }
 
@@ -64,26 +69,44 @@ float decimal ( int unidade, float valor ) {
 
 float binario ( int unidade, float valor ) {
 
-    if ( unidade == 2 ) {
-        float binario;
-        int cont = 1;
+    if ( unidade == 1 ) {
 
-        while ( valor!=0 ) {
+        int  inteiro, binaryInt = 0, i = 1;
+        //float  binaryFract = 0, k =0.1f, fracao, temp1;
+    
+        inteiro = (int)valor;
+        //fracao = valor - (int)valor;
 
-            binario += ( valor % 2 ) * cont;
-            valor/=2;
-            cont *= 10;
+
+        while( inteiro>0 )
+        {
+
+            binaryInt += inteiro % 2 * i;
+            i *= 10;
+            inteiro /= 2;
 
         }
 
-        return binario;
+
+      /* 
+        while(k>0.00000001)
+        {
+
+            temp1 =  fracao *2;
+            binaryFract += ((int)temp1)*k;
+            fracao = temp1 - (int)temp1;
+            k = k / 10;
+
+        }
+      */
+
+        return binaryInt; //+ binaryFract;
 
     }
 
     return valor;
     
 }
-
 
 
 float conversor_temp ( int u_entrada, int u_saida, float valor ) {
@@ -131,12 +154,32 @@ float conversor ( int tipo, int u_entrada, int u_saida, float valor ) {
 
 }
 
+void printvalor ( int tipo, int u_saida, float valor_c ) {
+
+    if ( tipo == 1 ) {
+
+        if ( u_saida  == 1 ) printf ( "%.2f C\n", valor_c );
+        else if ( u_saida  == 2 ) printf ( "%.2f F\n", valor_c );
+        else if ( u_saida  == 3 ) printf ( "%.2f K\n", valor_c );
+
+    } else {
+
+        if ( u_saida  == 1 ) printf ( "%.2F\n", valor_c);
+        else if ( u_saida  == 2 ) printf ( "%.0F\n", valor_c);
+
+    }
+
+}
+
 int main () {
 
-    double a, b, c;
+    int tipo, u_entrada, u_saida;
+    float valor, valor_c;
 
-    scanf ("%lf %lf %lf", &a, &b, &c);
-    raizes ( a, b ,c );
+    scanf ("%d %d %d %f", &tipo, &u_entrada, &u_saida, &valor);
+    valor_c = conversor ( tipo, u_entrada, u_saida, valor );
+
+    printvalor ( tipo, u_saida,  valor_c);
 
     return 0;
 

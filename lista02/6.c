@@ -21,32 +21,49 @@ double delta ( double a, double b, double c ) {
 
 }
 
+double termo_real ( double a, double b ) {
+
+    return -b / ( 2.0*a );
+
+}
+
+double termo_imaginario ( double a, double d ) {
+
+    return sqrt ( sqrt( d*d ) ) / ( 2*a );
+
+}
+
+void print_raiz (double real, double d, double imaginario) {
+
+    if ( !d ) { 
+
+        printf("%.2lf\n", real );
+
+    } else if ( d > 0 ) {
+
+        printf("%#.2lf ", real - imaginario );
+        printf("%#.2lf\n", real + imaginario );
+
+    } else {
+
+        printf("%.2lf-%.2lfi ", real, imaginario);
+        printf("%.2lf+%.2lfi\n", real, imaginario);
+
+    }
+
+}
+
 void raizes (double a, double b, double c) {
 
-    double raiz;
+    double real;
     double d;
     double imag;
 
     d = delta ( a, b, c );
-    raiz = -b / ( 2.0*a );
-    imag = sqrt ( sqrt( d*d ) );
-    imag /= 2*a;
+    real = termo_real ( a, b );
+    imag = termo_imaginario ( a, d );
 
-    if ( !d ) { 
-
-        printf("%.2lf\n", raiz );
-
-    } else if ( d >0 ) {
-
-        printf("%#.2lf ", raiz - imag );
-        printf("%#.2lf\n", raiz + imag );
-
-    } else {
-
-        printf("%.2lf-%.2lfi ", raiz, imag);
-        printf("%.2lf+%.2lfi\n", raiz, imag);
-
-    }
+    print_raiz (real, d, imag);
 
 }
 
