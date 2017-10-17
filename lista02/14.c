@@ -12,7 +12,7 @@ int inverte ( int valor, int parcial ) {
 
     if ( !valor ) return parcial;
 
-    return inverte ( valor/10, parcial*10 + valor%10);
+    return inverte ( valor/10, parcial*10 + valor%10 );
 
 }
 
