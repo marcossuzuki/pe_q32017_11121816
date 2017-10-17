@@ -24,9 +24,9 @@ int main () {
 
     int n, k;
 
-    scanf ("%d %d", &n, &k);
+    scanf ( "%d %d", &n, &k );
 
-    printf ("%d\n", pascal ( n, k ) );
+    printf ( "%d\n", pascal ( n, k ) );
 
     return 0;
 
