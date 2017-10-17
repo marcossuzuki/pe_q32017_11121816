@@ -18,23 +18,25 @@
 
 #include <stdio.h>
 
-void torre_Hanoi(int n, char pino_origem, char pino_dest, char pino_aux)
-{
+void torre_Hanoi ( int n, char pino_origem, char pino_dest, char pino_aux ) {
+
     if ( n == 1 ) {
 
-        printf("%c-%c", pino_origem, pino_dest);
+        printf( "%c-%c", pino_origem, pino_dest );
+
         return;
 
     }
 
-    torre_Hanoi(n-1, pino_origem, pino_aux, pino_dest);
-    printf(", %c-%c, ", pino_origem, pino_dest);
-    torre_Hanoi(n-1, pino_aux, pino_dest, pino_origem);
+    torre_Hanoi ( n-1, pino_origem, pino_aux, pino_dest );
+
+    printf ( ", %c-%c, ", pino_origem, pino_dest );
+
+    torre_Hanoi ( n-1, pino_aux, pino_dest, pino_origem );
 
 }
 
-int main()
-{
+int main() {
 
     int n;
 
