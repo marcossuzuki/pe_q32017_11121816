@@ -18,7 +18,7 @@
 
 #include <stdio.h>
 
-void towerOfHanoi(int n, char pino_origem, char pino_dest, char pino_aux)
+void torre_Hanoi(int n, char pino_origem, char pino_dest, char pino_aux)
 {
     if ( n == 1 ) {
 
@@ -27,9 +27,9 @@ void towerOfHanoi(int n, char pino_origem, char pino_dest, char pino_aux)
 
     }
 
-    towerOfHanoi(n-1, pino_origem, pino_aux, pino_dest);
+    torre_Hanoi(n-1, pino_origem, pino_aux, pino_dest);
     printf(", %c-%c, ", pino_origem, pino_dest);
-    towerOfHanoi(n-1, pino_aux, pino_dest, pino_origem);
+    torre_Hanoi(n-1, pino_aux, pino_dest, pino_origem);
 
 }
 
@@ -40,7 +40,7 @@ int main()
 
     scanf ( "%d", &n );
 
-    towerOfHanoi(n, 'A', 'C', 'B');
+    torre_Hanoi(n, 'A', 'C', 'B');
     printf ("\n");
 
     return 0;
