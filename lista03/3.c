@@ -53,6 +53,7 @@ int main ( )
 
     print_vetor(s, 5);
 
+    free(s);
     return 0;
   
 }
