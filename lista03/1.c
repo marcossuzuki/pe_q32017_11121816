@@ -1,3 +1,10 @@
+/* lista 3 exercicio 1
+ * Receba uma string e conte o numero de vogais dentro dela.
+ *
+ * Autor: Marcos Seiti Suzuki
+ * Data: 27/10/2017
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 
