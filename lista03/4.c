@@ -48,7 +48,6 @@ int main ( )
     scanf("%d %d %d", &m[1][0], &m[1][1], &m[1][2]);
     scanf("%d %d %d", &m[2][0], &m[2][1], &m[2][2]);
 
-    tm = malloc(sizeof(int)*l*c);
     tm = transposta(m[0], l, c);
 
     print_matriz(tm, c, l);
