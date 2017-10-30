@@ -30,12 +30,11 @@ void print_matriz(int *array, int m, int n)
 
     for (i=0; i<m; i++) {
         for (j=0; j<n; j++) {
-            printf("%d ", *array);
-            array++;
+            printf("%d ", *(array+i*m+j));
+            //array++;
         }
         printf("\n");             
     }
-
 }
 
 int main ( ) 
@@ -48,7 +47,7 @@ int main ( )
     scanf("%d %d %d", &m[1][0], &m[1][1], &m[1][2]);
     scanf("%d %d %d", &m[2][0], &m[2][1], &m[2][2]);
 
-    tm = transposta(m[0], l, c);
+    tm = transposta(&m[0][0], l, c);
 
     print_matriz(tm, c, l);
 
