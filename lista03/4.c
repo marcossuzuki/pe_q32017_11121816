@@ -31,7 +31,6 @@ void print_matriz(int *array, int m, int n)
     for (i=0; i<m; i++) {
         for (j=0; j<n; j++) {
             printf("%d ", *(array+i*m+j));
-            //array++;
         }
         printf("\n");             
     }
