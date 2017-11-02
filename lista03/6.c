@@ -1,3 +1,12 @@
+/* lista 3 exercicio 6
+ * Receba um valor inteiro n representando o tamanho do vetor e, em seguida, um vetor
+ * de inteiros com esse tamanho.  Imprima a mediana dos valores desse vetor com duas casas
+ * decimais.
+ *
+ * Autor: Marcos Seiti Suzuki
+ * Data: 02/11/2017
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 
