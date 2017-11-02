@@ -1,6 +1,6 @@
 /* lista 3 exercicio 6
  * Receba um valor inteiro n representando o tamanho do vetor e, em seguida, um vetor
- * de inteiros com esse tamanho.  Imprima a mediana dos valores desse vetor com duas casas
+ * de inteiros com esse tamanho. Imprima a mediana dos valores desse vetor com duas casas
  * decimais.
  *
  * Autor: Marcos Seiti Suzuki
@@ -9,8 +9,6 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-
-int values[] = { 88, 56, 100, 2, 25 };
 
 int cmpfunc(const void * a, const void * b) 
 {
