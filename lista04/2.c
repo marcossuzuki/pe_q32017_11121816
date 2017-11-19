@@ -9,7 +9,6 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <math.h>
 
 typedef struct Cronometro {
     unsigned int min, seg, dec;
