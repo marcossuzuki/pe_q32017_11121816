@@ -15,6 +15,22 @@ typedef struct Cronometro {
     char neg;
 } Cronometro;
 
+Cronometro converte (int decimal) {
+
+    Cronometro d;
+      
+    d.dec = decimal%100;
+    decimal -= decimal%100;
+    decimal /= 100;
+    d.seg = decimal%60;
+    decimal -= decimal%60;
+    decimal /= 60;
+    d.min = decimal;
+    
+    return d;
+
+}
+
 Cronometro diferenca (Cronometro *a, Cronometro *b) {
 
     Cronometro d;
@@ -28,7 +44,7 @@ Cronometro diferenca (Cronometro *a, Cronometro *b) {
     decimal2 += b->seg*100;
     decimal2 += b->dec;
 
-    result = decimal1 -  decimal2;
+    result = decimal2 -  decimal1;
     
     d.neg='\0';
     
@@ -37,13 +53,7 @@ Cronometro diferenca (Cronometro *a, Cronometro *b) {
         result *= -1;
     }
         
-    d.dec = result%100;
-    result -= result%100;
-    result /= 100;
-    d.seg = result%60;
-    result -= result%60;
-    result /= 60;
-    d.min = result;
+    d=converte(result);
     
     return d;
 
