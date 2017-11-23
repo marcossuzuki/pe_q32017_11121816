@@ -31,15 +31,7 @@ ulint f2 (ulint x)
 int main () {
     clock_t tempo_init, tempo_fim;
     double tempo_gasto;
-    ulint soma = 0;
-    ulint num;
-    
-    scanf("%lu", &num);
-    if (f1(num)) printf("sim\n");
-    else printf("nao\n");
-    
-    if (f2(num)) printf("sim\n");
-    else printf("nao\n");   
+    ulint soma = 0; 
     
     tempo_init = clock();
     for (int i=0; i<BIGNUM; i++) {
