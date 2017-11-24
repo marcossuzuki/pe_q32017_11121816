@@ -9,7 +9,7 @@
  * Data: 18/11/2017
  */
  
- #include <stdio.h>
+#include <stdio.h>
 #include <time.h>
 #include <limits.h>
 
@@ -33,7 +33,7 @@ ulint f1 (ulint x)
 //funcao bitwise
 ulint f2 (ulint x)
 {
-    int sum = 0;
+    ulint sum = 0;
     
     while (x >= 1) {
         sum += x&1;
@@ -46,33 +46,26 @@ ulint f2 (ulint x)
 int main () {
     clock_t tempo_init, tempo_fim;
     double tempo_gasto;
-    ulint soma = 0;
-    ulint num;
-    
-    scanf("%lu", &num);
-    printf("%lu\n", f1(num));
-    printf("%lu\n", f2(num));
+    //ulint soma = 0;
     
     tempo_init = clock();
 
-    for (int i=0; i<BIGNUM; i++) {
-        f1(num);
+    for (int i=0; i<(BIGNUM/10000000); i++) {
+        f1(i);
     }
 
-    f1(num);
     tempo_fim = clock();
     
     tempo_gasto = (double)(tempo_fim - tempo_init) / CLOCKS_PER_SEC;
     printf("Tempo gasto na versao normal: %lf\n", tempo_gasto);
     
-    soma = 0;
+    //soma = 0;
     tempo_init = clock();
     
-    for (int i=0; i<BIGNUM; i++) {
-        f2(num);
+    for (int i=0; i<(BIGNUM/10000000); i++) {
+        f2(i);
     }
     
-    f2(num);
     tempo_fim = clock();
     
     tempo_gasto = (double)(tempo_fim - tempo_init) / CLOCKS_PER_SEC;

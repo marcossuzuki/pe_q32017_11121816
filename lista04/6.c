@@ -29,33 +29,26 @@ ulint f2 (ulint x, ulint y)
 int main () {
     clock_t tempo_init, tempo_fim;
     double tempo_gasto;
-    ulint soma = 0;
-    ulint num1, num2;
-    
-    scanf("%lu %lu", &num1, &num2);
+
     
     tempo_init = clock();
 
-    for (int i=0; i<BIGNUM; i++) {
-        f1(num1,num2);
+    for (int i=0; i<BIGNUM-1; i++) {
+        f1(i,i++);
     }
-
+/*
     if (f1(num1, num2)) printf("maior = %lu e menor = %lu\n", num1, num2);
     else printf("maior = %lu e menor = %lu\n", num2, num1);
+*/
     tempo_fim = clock();
     
     tempo_gasto = (double)(tempo_fim - tempo_init) / CLOCKS_PER_SEC;
     printf("Tempo gasto na versao normal: %lf\n", tempo_gasto);
     
-    soma = 0;
     tempo_init = clock();
-
-    for (int i=0; i<BIGNUM; i++) {
-        f2(num1,num2);
+    for (int i=0; i<BIGNUM-1; i++) {
+        f2(i,i++);
     }
-    
-    if (f2(num1, num2)) printf("maior = %lu e menor = %lu\n", num1, num2);
-    else printf("maior = %lu e menor = %lu\n", num2, num1);
     tempo_fim = clock();
     
     tempo_gasto = (double)(tempo_fim - tempo_init) / CLOCKS_PER_SEC;
